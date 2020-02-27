@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input1" /><button id="button">Add</button>
+    <ol id="list"></ol>
+
+    <script>
+      let input1 = document.getElementById("input1");
+      let button = document.getElementById("button");
+      let list = document.getElementById("list");
+
+      function addText() {
+        list.innerHTML = list.innerHTML + ("<li>" + input1.value + "</li>");
+        //let li = document.createElement("li");
+        //list.appendChild();
+      }
+
+      button.addEventListener("click", function() {
+        addText();
+      });
+
+      //   input1.addEventListener("change", function() {
+      //     addText();
+      //   });
+    </script>
+  </body>
+</html>

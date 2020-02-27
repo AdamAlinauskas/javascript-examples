@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // if Health is equal 0 then your dead
+      // if health is less than 25 you should really seek medical attention
+      // if health is less than or equal to 50 then you're very hurt
+      // if health is less than 99 doing pretty awesome
+      // if health is euqal to 100 you are very healthy
+      // if health is greater than 100 you are in god mode.
+
+      let health = 0;
+
+      if (health <= 0) {
+        console.log("You're dead");
+      } else if (health < 25) {
+        console.log("You should really seek medical attention");
+      } else if (health <= 50) {
+        console.log("then you're very hurt");
+      } else if (health <= 99) {
+        console.log("doing pretty awesome");
+      } else if (health == 100) {
+        console.log("you are very healthy");
+      } else {
+        console.log("GOD MODE");
+      }
+    </script>
+  </body>
+</html>
