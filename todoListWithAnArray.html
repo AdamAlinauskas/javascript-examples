@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="todoList"></ol>
+  </body>
+
+  <script>
+    let todoList = document.getElementById("todoList");
+    let todos = ["clean room", "cook", "play games"];
+
+    function display() {
+      todoList.innerHTML = "";
+      for (let i = 0; i < todos.length; i++) {
+        todoList.innerHTML =
+          todoList.innerHTML +
+          "<li>" +
+          todos[i] +
+          " <button onclick='remove(" +
+          i +
+          ")' >x</button></li>";
+      }
+    }
+
+    function remove(index) {
+      todos.splice(index, 1);
+      display();
+    }
+
+    display();
+  </script>
+</html>

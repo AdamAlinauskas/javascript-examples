@@ -7,12 +7,11 @@
   </head>
   <body>
     <input id="firstNumber" type="number" />
-    +
+    <select id="operation">
+      <option>+</option>
+      <option>-</option>
+    </select>
     <input id="secondNumber" type="number" />
-    +
-    <input id="thirdNumber" type="number" />
-    +
-    <input id="forthNumber" type="number" />
 
     <button id="calculateButton">Calculate</button>
     <div>
@@ -21,29 +20,23 @@
     <script>
       let firstNumber = document.getElementById("firstNumber");
       let secondNumber = document.getElementById("secondNumber");
-      let thirdNumber = document.getElementById("thirdNumber");
-      let forthNumber = document.getElementById("forthNumber");
 
       let calculateButton = document.getElementById("calculateButton");
       let answerArea = document.getElementById("answerArea");
 
+      let operation = document.getElementById("operation");
+
       function handleCalculate() {
-        // let result =
-        //   Number(firstNumber.value) +
-        //   Number(secondNumber.value) +
-        //   Number(thirdNumber.value) +
-        //   Number(forthNumber.value);
+        let result = 0;
 
-        let answer = 0;
-
-        if (dropdown.value == "+") {
-          answer = Number(firstNumber.value) + Number(secondNumber.value);
-        } else if (dropdown.value == "-") {
-          answer = Number(firstNumber.value) - Number(secondNumber.value);
+        if (operation.value == "+") {
+          result = Number(firstNumber.value) + Number(secondNumber.value);
+        } else if (operation.value == "-") {
+          result = Number(firstNumber.value) - Number(secondNumber.value);
         }
+        // Number(firstNumber.value) + Number(secondNumber.value);
 
         answerArea.innerHTML = result;
-        console.log(result);
       }
 
       calculateButton.addEventListener("click", handleCalculate);
