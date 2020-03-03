@@ -6,12 +6,18 @@
     <title>Document</title>
   </head>
   <body>
+    <input id="newTodo" />
+    <button id="addButton">Add</button>
     <ol id="todoList"></ol>
   </body>
 
   <script>
-    let todoList = document.getElementById("todoList");
     let todos = ["clean room", "cook", "play games"];
+
+    //Find elements on page.
+    let todoList = document.getElementById("todoList");
+    let addButton = document.getElementById("addButton");
+    let newTodo = document.getElementById("newTodo");
 
     function display() {
       todoList.innerHTML = "";
@@ -30,6 +36,13 @@
       todos.splice(index, 1);
       display();
     }
+
+    function addTodo() {
+      todos.push(newTodo.value);
+      display();
+    }
+
+    addButton.addEventListener("click", addTodo);
 
     display();
   </script>
