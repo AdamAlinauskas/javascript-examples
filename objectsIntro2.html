@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Animal {
+        speak() {
+          return "honk";
+        }
+      }
+
+      class Duck extends Animal {
+        speak() {
+          return "QUACK " + super.speak();
+        }
+      }
+
+      class Mallord extends Duck {
+        speak() {
+          return "QUACK QUAC";
+        }
+      }
+
+      class Dog extends Animal {}
+      class Cat extends Animal {}
+
+      class Farm {
+        animals = [];
+
+        constructor(initialAnimals) {
+          this.animals = initialAnimals;
+        }
+      }
+
+      class Person {
+        name = "";
+
+        constructor(name) {
+          this.name = name;
+        }
+
+        walk() {
+          console.log('I"m walking');
+        }
+      }
+
+      let person1 = new Person("Tanisha");
+      console.log(person1.name);
+      person1.walk();
+
+      let name1 = "adam";
+      let age1 = 99;
+
+      let name2 = "bill";
+      let age2 = 88;
+    </script>
+  </body>
+</html>

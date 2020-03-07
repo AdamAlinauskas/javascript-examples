@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let colorSelector = {
+        currentColor: "blue",
+        lastUsedColor: "green"
+      };
+
+      colorSelector.lastUsedColor;
+
+      class Enemy {
+        health = 100;
+        weapon = "punch";
+
+        draw() {
+          return "Scary monster";
+        }
+
+        takeDamage(damageDealt) {
+          this.health = this.health - damageDealt;
+
+          if (this.health <= 0) {
+            return "Dead";
+          } else {
+            return "Health at " + this.health;
+          }
+        }
+      }
+
+      class FireEnemy extends Enemy {
+        health = 400;
+        draw() {
+          return "Draw lava";
+        }
+      }
+
+      class WaterEnemy extends Enemy {
+        health = 20;
+        draw() {
+          return "Draw water bottle slightly angry";
+        }
+      }
+
+      const allEnemies = [];
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new WaterEnemy());
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new WaterEnemy());
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new WaterEnemy());
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new WaterEnemy());
+      allEnemies.push(new FireEnemy());
+      allEnemies.push(new WaterEnemy());
+
+      for (let index = 0; index < allEnemies.length; index++) {
+        let theEnemy = allEnemies[index];
+        console.log(theEnemy.draw());
+      }
+
+      let fire1 = new FireEnemy();
+    </script>
+  </body>
+</html>
